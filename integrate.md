@@ -300,7 +300,8 @@ I execute this command then i am go browser and write `localhost:8081`(localhost
 
 ## Third Step-
 
-## [Welcome to Keycloak page](https://www.keycloak.org/getting-started/getting-started-podman):
+## [Welcome to Keycloak page]![image](https://github.com/Devendra-Singh6464/Flask_Rest_Api_Integrate_with_keycloak/assets/136952464/c63f0bad-a8ae-43f9-8952-574b8e47e4b2)
+:
 
 Click on `Administrations Console`
  
@@ -318,22 +319,23 @@ A realm in Keycloak is equivalent to a tenant. Each realm allows an administrato
 >
 1. Open the Keycloak Admin Console.  
 2. Click the word master in the top-left corner, then click Create Realm.  
-3. Enter myrealm in the Realm name field.  
+3. Enter flask_app in the Realm name field.  
 4. Click Create.
 >
 
 ## Create a user  
 Initially, the realm has no users. Use these steps to create a user:
 1. Open the Keycloak Admin Console.
-2. Click the word master in the top-left corner, then click myrealm.
+2. Click the word master in the top-left corner, then click flask_app.
 3. Click Users in the left-hand menu.
 4. Click Add user.
 5. Fill in the form with the following values:
-   -  Username: `any username`
+   -  Email: `any email id`
+   -  Email verified : `On`
+   -  Users name: `any name`
    -  First name: `any first name`
    -  Last name: `any last name`
-6. Click Create.
-
+7. Click Create.
 
 This user needs a password to log in. To set the initial password:
 1. Click Credentials at the top of the page.
@@ -346,7 +348,7 @@ You can now log in to the Account Console to verify this user is configured corr
 2. Log in with Deepak and the password you created earlier.
 
 
-    As a user in the Account Console, you can manage your account including modifying your profile, adding two-factor authentication, and including identity provider a
+   As a user in the Account Console, you can manage your account including modifying your profile, adding two-factor authentication, and including identity provider a
 
 
 ## Secure the first application
@@ -363,10 +365,6 @@ To secure the first application, you start by registering the application with y
 7. Confirm that Standard flow is enabled.
 8. Click Next.
 9. Click Save.
-    
-Keycloak myrealm Home page!
-![image](https://github.com/Devendra-Singh6464/keycloak_postgres_connection_using_podman/assets/136952464/302fedf1-8fe5-4bb6-9c2b-673796e38cb6)
-
 
 
 ## Forth Step -
