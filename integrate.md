@@ -22,10 +22,6 @@ Python 3.10.12
 Flask 2.3.3  
 Werkzeug 3.0.1  
 
-Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the following command:
-```
-sudo apt install python3-pip
-```
 
 ## First Step -
 
@@ -49,12 +45,17 @@ python3 -m venv venv
 
 #### Command-
 ```
-Source venv/bin/activates
+Source venv/bin/activate
 ```
 #### Output-
 ```
 deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
 (venv) deepak@deepak-Inspiron-3502:~/keycloak1$
+```
+
+Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the following command:
+```
+sudo apt install python3-pip
 ```
 
 How to install flask in ubuntu 22.04
