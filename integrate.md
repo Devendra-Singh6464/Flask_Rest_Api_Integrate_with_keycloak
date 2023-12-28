@@ -232,13 +232,13 @@ podman run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin
 ```
 deepak@deepak-Inspiron-3502:~$ podman run -p 8880:8880 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.3 start-dev
 Updating the configuration and installing your custom providers, if any. Please wait.
-2023-12-28 06:05:25,250 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 13127ms
-2023-12-28 06:05:27,615 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
-2023-12-28 06:05:30,504 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
-2023-12-28 06:05:31,359 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
-2023-12-28 06:05:31,596 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
-2023-12-28 06:05:31,766 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
-2023-12-28 06:05:39,598 INFO  [org.keycloak.quarkus.runtime.storage.legacy.liquibase.QuarkusJpaUpdaterProvider] (main) Initializing database schema. Using changelog META-INF/jpa-changelog-master.xml
+2023-12-23 06:05:25,250 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 13127ms
+2023-12-23 06:05:27,615 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+2023-12-23 06:05:30,504 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+2023-12-23 06:05:31,359 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+2023-12-23 06:05:31,596 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+2023-12-23 06:05:31,766 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+2023-12-23 06:05:39,598 INFO  [org.keycloak.quarkus.runtime.storage.legacy.liquibase.QuarkusJpaUpdaterProvider] (main) Initializing database schema. Using changelog META-INF/jpa-changelog-master.xml
 
 UPDATE SUMMARY
 Run:                        117
@@ -247,15 +247,15 @@ Filtered out:                 0
 -------------------------------
 Total change sets:          117
 
-2023-12-28 06:05:47,731 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_15327, Site name: null
-2023-12-28 06:05:47,913 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
-2023-12-28 06:05:47,993 INFO  [org.keycloak.services] (main) KC-SERVICES0050: Initializing master realm
-2023-12-28 06:05:51,625 INFO  [io.quarkus] (main) Keycloak 23.0.3 on JVM (powered by Quarkus 3.2.9.Final) started in 26.133s. Listening on: http://0.0.0.0:8080
-2023-12-28 06:05:51,626 INFO  [io.quarkus] (main) Profile dev activated. 
-2023-12-28 06:05:51,626 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, vertx]
-2023-12-28 06:05:52,267 INFO  [org.keycloak.services] (main) KC-SERVICES0009: Added user 'admin' to realm 'master'
-2023-12-28 06:05:52,275 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
-^C2023-12-28 06:06:21,618 INFO  [io.quarkus] (Shutdown thread) Keycloak stopped in 0.087s
+2023-12-23 06:05:47,731 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_15327, Site name: null
+2023-12-23 06:05:47,913 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
+2023-12-23 06:05:47,993 INFO  [org.keycloak.services] (main) KC-SERVICES0050: Initializing master realm
+2023-12-23 06:05:51,625 INFO  [io.quarkus] (main) Keycloak 23.0.3 on JVM (powered by Quarkus 3.2.9.Final) started in 26.133s. Listening on: http://0.0.0.0:8080
+2023-12-23 06:05:51,626 INFO  [io.quarkus] (main) Profile dev activated. 
+2023-12-23 06:05:51,626 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, vertx]
+2023-12-23 06:05:52,267 INFO  [org.keycloak.services] (main) KC-SERVICES0009: Added user 'admin' to realm 'master'
+2023-12-23 06:05:52,275 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
+^C2023-12-23 06:06:21,618 INFO  [io.quarkus] (Shutdown thread) Keycloak stopped in 0.087s
 
 ```
 
@@ -274,8 +274,7 @@ cab3aded9c0f  quay.io/keycloak/keycloak:23.0.3    start-dev   5 days ago   Up 17
 
 ```
 
-
-if your podman pod status not up so please start podman pod
+if your podman status not up so please run podman Container  
 
 ### command-
 
@@ -290,6 +289,81 @@ or
 ```
 podman pod start --latest
 ```
+
+## [Welcome to Keycloak page](https://www.keycloak.org/getting-started/getting-started-podman):
+Click on `Administrations Console`
+ 
+Then i am go sign in page
+>
+  - username - `admin`  
+  - password - `admin` 
+> 
+
+# Create a realm
+
+A realm in Keycloak is equivalent to a tenant. Each realm allows an administrator to create isolated groups of applications and users. Initially, Keycloak includes a single realm, called master. Use this realm only for managing Keycloak and not for managing any applications.
+
+## Use these steps to create the first realm.
+>
+1. Open the Keycloak Admin Console.  
+2. Click the word master in the top-left corner, then click Create Realm.  
+3. Enter myrealm in the Realm name field.  
+4. Click Create.
+>
+
+## Create a user  
+Initially, the realm has no users. Use these steps to create a user:
+1. Open the Keycloak Admin Console.
+2. Click the word master in the top-left corner, then click myrealm.
+3. Click Users in the left-hand menu.
+4. Click Add user.
+5. Fill in the form with the following values:
+   -  Username: `any username`
+   -  First name: `any first name`
+   -  Last name: `any last name`
+6. Click Create.
+
+
+This user needs a password to log in. To set the initial password:
+1. Click Credentials at the top of the page.
+2. Fill in the Set password form with a password.
+3. Toggle Temporary to Off so that the user does not need to update this password at the first login.
+
+## Log in to the Account Console
+You can now log in to the Account Console to verify this user is configured correctly.
+1. Open the Keycloak Account Console.
+2. Log in with Deepak and the password you created earlier.
+
+
+    As a user in the Account Console, you can manage your account including modifying your profile, adding two-factor authentication, and including identity provider a
+
+
+## Secure the first application
+To secure the first application, you start by registering the application with your Keycloak instance:
+
+1. Open the Keycloak Admin Console.
+2. Click the word master in the top-left corner, then click myrealm.
+3. Click Clients.
+4. Click Create client
+5. Fill in the form with the following values:
+   -  Client type: `OpenID Connect`
+   - Client ID:   `myclient`
+6. Click Next
+7. Confirm that Standard flow is enabled.
+8. Click Next.
+9. Click Save.
+    
+Keycloak myrealm Home page!
+![image](https://github.com/Devendra-Singh6464/keycloak_postgres_connection_using_podman/assets/136952464/302fedf1-8fe5-4bb6-9c2b-673796e38cb6)
+
+
+
+From a terminal, enter the following command to start Keycloak:-
+
+> This command starts Keycloak exposed on the local port 8080 and creates an initial admin user with the username admin and password admin.
+
+I execute this command then i am go browser and write `localhost:8080`(localhost:port)
+
 
 ## Second Step -
 
@@ -410,6 +484,9 @@ After Creating app.py ,then Create a auth.json File in same folder
     }
   }
 ```
+
+Create a requirements.txt file 
+> requirements.txt
 
 
 deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
