@@ -157,11 +157,7 @@ Keycloak provides user federation, strong authentication, user management, fine-
 ### After installation keycloak TAR.GZ(sha1) file unzip this file 
 Go, files > Download > right click (on keycloak TAR.GZ(sha1) file and) > click Exteact Here.
 
-Then Install keylock Pull the keycloak iamges using podman 
 
-```
-podman pull quay.io/keycloak/keycloak
-```
 
 ## Get started with Keycloak on Podman
 
@@ -249,6 +245,11 @@ podman -v
 ## Output- 
 ```
 podman version 3.4.4
+```
+Then Install keylock Pull the keycloak iamges using podman 
+
+```
+podman pull quay.io/keycloak/keycloak
 ```
 
 ## Second Step : 
