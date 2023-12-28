@@ -360,7 +360,7 @@ To secure the first application, you start by registering the application with y
 4. Click Create client
 5. Fill in the form with the following values:
    -  Name: `OpenID Connect`
-   -  Client ID:   `myclient`
+   -  Client ID:   `rest_api`
    -  Root URL: `http://127.0.0.1:5000/`
    -  Valid redirect URIs:`http://127.0.0.1:5000/*`
    -  Admin URL :`http://127.0.0.1:5000/`
@@ -372,6 +372,19 @@ To secure the first application, you start by registering the application with y
 7. Confirm that Standard flow is enabled.
 8. Click Next.
 9. Click Save.
+
+> How to find our openid-configuration like- `issuer`,`auth_uri`,`userinfo_uri`,`token_uri`,`token_introspection_uri`
+ 1. Open the Keycloak Admin Console.
+ 2. Click the word master in the top-left corner, then click `flask_app`.
+ 3. Click `Realm settings` in the left-hand menu.
+ 4. Scroll Down and Click `OpenID Endpoint Configuration` link 
+
+> How to find `Client Secret`-
+ 1. Open the Keycloak Admin Console.
+ 2. Click the word master in the top-left corner, then click `flask_app`.
+ 3. Click `Clients` in the left-hand menu.
+ 4. Click `rest_api`
+ 5. Click `Credentials` 
 
 
 ## Forth Step -
@@ -394,9 +407,16 @@ python3 -m venv venv
 #### Syntax
 > source <Your_Venv_name>/bin/activate
 
+#### Command-
 ```
 Source venv/bin/activates
 ```
+#### Output-
+```
+deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
+(venv) deepak@deepak-Inspiron-3502:~/keycloak1$
+```
+
 Create a app.py file in keycloak1 Folder then run this command 
 > app.py
 ```
@@ -494,13 +514,15 @@ After Creating app.py ,then Create a auth.json File in same folder
   }
 ```
 
-Create a requirements.txt file 
-> requirements.txt
+> How to find our auth file-  `issuer`,`auth_uri`,`userinfo_uri`,`token_uri`,`token_introspection_uri`
+ 1. Open the Keycloak Admin Console.
+ 2. Click the word master in the top-left corner, then click `flask_app`.
+ 3. Click `Realm settings` in the left-hand menu.
 
-
-deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
-(venv) deepak@deepak-Inspiron-3502:~/keycloak1$ 
-
-
-- Create a app.py file in Vs code 
+> How to find `Client Secret`-
+ 1. Open the Keycloak Admin Console.
+ 2. Click the word master in the top-left corner, then click `flask_app`.
+ 3. Click `Clients` in the left-hand menu.
+ 4. Click `rest_api`
+ 5. Click `Credentials` 
 
