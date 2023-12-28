@@ -300,7 +300,7 @@ I execute this command then i am go browser and write `localhost:8081`(localhost
 
 ## Third Step-
 
-## [Welcome to Keycloak page]![image](https://github.com/Devendra-Singh6464/Flask_Rest_Api_Integrate_with_keycloak/assets/136952464/c63f0bad-a8ae-43f9-8952-574b8e47e4b2)
+## [Welcome to Keycloak page]![image](https://github.com/Devendra-Singh6464/Flask_Rest_Api_Integrate_with_keycloak/assets/136952464/2aa702a9-80f3-406b-931b-4dbd35dd5749)
 :
 
 Click on `Administrations Console`
@@ -355,12 +355,19 @@ You can now log in to the Account Console to verify this user is configured corr
 To secure the first application, you start by registering the application with your Keycloak instance:
 
 1. Open the Keycloak Admin Console.
-2. Click the word master in the top-left corner, then click myrealm.
+2. Click the word master in the top-left corner, then click flask_app.
 3. Click Clients.
 4. Click Create client
 5. Fill in the form with the following values:
-   -  Client type: `OpenID Connect`
-   - Client ID:   `myclient`
+   -  Name: `OpenID Connect`
+   -  Client ID:   `myclient`
+   -  Root URL: `http://127.0.0.1:5000/`
+   -  Valid redirect URIs:`http://127.0.0.1:5000/*`
+   -  Admin URL :`http://127.0.0.1:5000/`
+   -  Client authentication: `On`
+   -  Authorization :`On`
+      Logout settings : 
+   -  Front channel logout: `On`
 6. Click Next
 7. Confirm that Standard flow is enabled.
 8. Click Next.
