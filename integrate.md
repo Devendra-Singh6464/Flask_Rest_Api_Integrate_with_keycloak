@@ -7,17 +7,41 @@ Description: Ubuntu 22.04.3 LTS
 Release:	22.04  
 Codename:	jammy  
 
-
-- Podman 
-
+1. Podman 
 > podman version 3.4.4
 
-- python Version 
->Python 3.10.12
+2. python (Atleast)
+> Python 3.10.12
 
-- Flask (Python Framework)
+3. Flask (Python Framework)
+> Flask 2.3.3
 
+### Output-
+deepak@deepak-Inspiron-3502:~$ flask --version  
+Python 3.10.12  
+Flask 2.3.3  
+Werkzeug 3.0.1  
 
+Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the following command:
+```
+sudo apt install python3-pip
+```
+How to install flask in ubuntu 22.04
+```
+pip install flask 
+```
+How to check flask --version
+### Command -
+```
+flask --version
+```
+4. Keycloak
+```   
+pip install keycloak
+```
+```
+pip install Flask-OIDC
+```
 
 
 ### What is APIs? 
@@ -269,4 +293,128 @@ podman pod start --latest
 
 ## Second Step -
 
-Create a app.py file in Vs code  
+1. Creating a New Folder keycloak1
+
+2. After Creating a keycloak1 folder > Right Click and Click on the 'Open with Other Application' > Click the Visual Studio Code.
+
+> Creating a virtual environment (venv) with Vs code Terminal
+
+Creating a virtual environment (venv) for a Python Flask project is a good practice as it helps isolate dependencies for your project and keeps your project environment separate from the system-wide Python installation.
+
+### Command - 
+#### Syntax
+> python3 -m venv <Your_Venv_name>
+```
+python3 -m venv venv
+```
+#### Activate the Virtual Environment:
+#### Syntax
+> source <Your_Venv_name>/bin/activate
+
+```
+Source venv/bin/activates
+```
+Create a app.py file in keycloak1 Folder then run this command 
+> app.py
+```
+import json
+import logging
+import os
+
+from flask import Flask, g
+from flask_oidc import OpenIDConnect
+import requests
+from keycloak import KeycloakOpenID
+from oauth2client.client import OAuth2Credentials
+
+logging.basicConfig(level=logging.DEBUG)
+
+app = Flask(__name__)
+app.config.update({
+    'SECRET_KEY': 'TpuAEMd2qWVwfNsM6TevLOGmaljrgPeQ',
+    'TESTING': True,
+    'DEBUG': True,
+    'OIDC_CLIENT_SECRETS': 'auth.json',
+    'OIDC_ID_TOKEN_COOKIE_SECURE': False,
+    # 'OIDC_REQUIRE_VERIFIED_EMAIL': False,
+    # 'OIDC_EMAIL_VERIFICATION' = 'mandatory',
+    'OIDC_USER_INFO_ENABLED': True,
+    'OIDC_OPENID_REALM': 'flask_app',
+    'OIDC_SCOPES': ['openid', 'email', 'profile'],
+    'OIDC_TOKEN_TYPE_HINT': 'access_token',
+    'OIDC_INTROSPECTION_AUTH_METHOD': 'client_secret_post'
+    # 'OIDC_INTROSPECTION_AUTH_METHOD': 'bearer'
+})
+
+print(os.listdir())
+os.chdir("/home/deepak/keycloak1")
+
+oidc = OpenIDConnect(app)
+
+keycloak_openid = KeycloakOpenID(server_url="http://localhost:8081/",
+                                 client_id="rest_api",
+                                 realm_name="flask_app",
+                                 client_secret_key="TpuAEMd2qWVwfNsM6TevLOGmaljrgPeQ")
+
+@app.route('/')
+@oidc.require_login
+def protected():
+    info = oidc.user_getinfo(['preferred_username', 'email', 'sub'])
+    username = info.get('preferred_username')
+    email = info.get('email')
+    sub = info.get('sub')
+    print("""user: %s, email:%s"""%(username, email))
+
+    token = oidc.get_access_token()
+    return ("""%s"""%token)
+
+
+@app.route('/private', methods=['POST'])
+@oidc.accept_token(require_token=True)
+def hello_api():
+    return("""user: %s, email:%s"""%(g.oidc_token_info['username'], g.oidc_token_info['preferred_username']))
+
+
+@app.route('/logout')
+def logout():
+    """Performs local logout by removing the session cookie."""
+    refresh_token = oidc.get_refresh_token()
+    oidc.logout()
+    if refresh_token is not None:
+        keycloak_openid.logout(refresh_token)
+    oidc.logout()
+    g.oidc_id_token = None
+    return 'Hi, you have been logged out! <a href="/">Return</a>'
+
+
+if __name__ == '__main__':
+    app.run()
+```
+
+After Creating app.py ,then Create a auth.json File in same folder
+> auth.py
+```
+{
+    "web": {
+      "issuer": "http://localhost:8081/realms/flask_app",
+      "auth_uri":  "http://localhost:8081/realms/flask_app/protocol/openid-connect/auth",
+      "client_id": "rest_api",
+      "client_secret": "TpuAEMd2qWVwfNsM6TevLOGmaljrgPeQ",
+      "redirect_uris": [
+        "http://localhost:5000/*"
+      ],
+      "userinfo_uri": "http://localhost:8081/realms/flask_app/protocol/openid-connect/userinfo",
+      "token_uri":"http://localhost:8081/realms/flask_app/protocol/openid-connect/token",
+      "token_introspection_uri":"http://localhost:8081/realms/flask_app/protocol/openid-connect/token/introspect",
+      "bearer_only": "true"
+    }
+  }
+```
+
+
+deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
+(venv) deepak@deepak-Inspiron-3502:~/keycloak1$ 
+
+
+- Create a app.py file in Vs code 
+
