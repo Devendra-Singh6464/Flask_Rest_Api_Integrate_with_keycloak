@@ -314,14 +314,14 @@ if your podman status not up so please run podman Container
 
 #### Syntax-
 
-podman pod start <podman_names>
+podman start <podman_container_names>
 
 ```
-podman pod start 82148
+podman start 82148
 ```
 or
 ```
-podman pod start --latest
+podman start --latest
 ```
 
 From a terminal, enter the following command to start Keycloak:-
