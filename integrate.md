@@ -26,6 +26,17 @@ Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the fo
 ```
 sudo apt install python3-pip
 ```
+
+## First Step -
+
+1. Creating a New Folder keycloak1
+
+2. After Creating a keycloak1 folder > Right Click and Click on the 'Open with Other Application' > Click the Visual Studio Code.
+
+> Creating a virtual environment (venv) with Vs code Terminal
+
+Creating a virtual environment (venv) for a Python Flask project is a good practice as it helps isolate dependencies for your project and keeps your project environment separate from the system-wide Python installation.
+
 ### Command - 
 #### Syntax
 > python3 -m venv <Your_Venv_name>
@@ -383,7 +394,15 @@ To secure the first application, you start by registering the application with y
    -  Client ID:   `rest_api`
    -  Root URL: `http://127.0.0.1:5000/`
    -  Valid redirect URIs:`http://127.0.0.1:5000/*`
-   -  Admin URL :`http://127.0.0.1:5000/`
+   -  Admin URL :`http://127.0.0.1:500## Forth Step -
+
+1. Creating a New Folder keycloak1
+
+2. After Creating a keycloak1 folder > Right Click and Click on the 'Open with Other Application' > Click the Visual Studio Code.
+
+> Creating a virtual environment (venv) with Vs code Terminal
+
+Creating a virtual environment (venv) for a Python Flask project is a good practice as it helps isolate dependencies for your project and keeps your project environment separate from the system-wide Python installation.0/`
    -  Client authentication: `On`
    -  Authorization :`On`
       Logout settings : 
