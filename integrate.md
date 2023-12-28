@@ -396,7 +396,7 @@ To secure the first application, you start by registering the application with y
    -  Client ID:   `rest_api`
    -  Root URL: `http://127.0.0.1:5000/`
    -  Valid redirect URIs:`http://127.0.0.1:5000/*`
-   -  Admin URL :`http://127.0.0.1:500## Forth Step -
+   -  Admin URL :`http://127.0.0.1:5000/` Forth Step -
 
 1. Creating a New Folder keycloak1
 
