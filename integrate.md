@@ -113,6 +113,12 @@ fine-grained authorization.
 
 Install  keycloak....
 
+## [Keycloak](https://www.keycloak.org/):
+   Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
+No need to deal with storing users or authenticating users.  
+Keycloak provides user federation, strong authentication, user management, fine-grained authorization.
+
+
 > Visit the Keycloak download page: [Keycloak Downloads](https://www.keycloak.org/downloads).   
 > Click to TAR.GZ(sha1) and Download keycloak.
  
@@ -124,11 +130,6 @@ Then Install keylock Pull the keycloak iamges using podman
 ```
 podman pull quay.io/keycloak/keycloak
 ```
-
-## [Keycloak](https://www.keycloak.org/):
-   Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
-No need to deal with storing users or authenticating users.  
-Keycloak provides user federation, strong authentication, user management, fine-grained authorization.
 
 ## Get started with Keycloak on Podman
 
@@ -290,7 +291,17 @@ or
 podman pod start --latest
 ```
 
+From a terminal, enter the following command to start Keycloak:-
+
+> This command starts Keycloak exposed on the local port 8080 and creates an initial admin user with the username admin and password admin.
+
+I execute this command then i am go browser and write `localhost:8081`(localhost:port)
+
+
+## Third Step-
+
 ## [Welcome to Keycloak page](https://www.keycloak.org/getting-started/getting-started-podman):
+
 Click on `Administrations Console`
  
 Then i am go sign in page
@@ -358,14 +369,7 @@ Keycloak myrealm Home page!
 
 
 
-From a terminal, enter the following command to start Keycloak:-
-
-> This command starts Keycloak exposed on the local port 8080 and creates an initial admin user with the username admin and password admin.
-
-I execute this command then i am go browser and write `localhost:8080`(localhost:port)
-
-
-## Second Step -
+## Forth Step -
 
 1. Creating a New Folder keycloak1
 
