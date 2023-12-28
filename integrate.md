@@ -1,0 +1,272 @@
+# REST API
+
+### Prerequisite
+
+Distributor ID:	Ubuntu  
+Description: Ubuntu 22.04.3 LTS   
+Release:	22.04  
+Codename:	jammy  
+
+
+- Podman 
+
+> podman version 3.4.4
+
+- python Version 
+>Python 3.10.12
+
+- Flask (Python Framework)
+
+
+
+
+### What is APIs? 
+
+ API stands for Application Programming Interface. Imagine you're in a restaurant. You, as a customer, don't go into the kitchen and cook your food; instead, you interact with the waiter/waitress. You tell the waiter what you want to order, and the waiter takes that order to the kitchen, communicates with the chef, and brings back your food.
+
+ Similarly, an API is like a waiter/waitress in a restaurant. It's a set of rules and protocols that allows different software applications to communicate and interact with each other. It defines how different software components should interact. It's like an intermediary that takes requests from one software (like your application) and communicates those requests to another software (like a server or database). Then it brings back the response to the requester.
+
+ In the digital world, APIs allow different software systems, services, or platforms to talk to each other, exchange data, request services, or perform specific actions. They define the functionalities that developers can use in their applications without needing to know how those functionalities are implemented.
+
+
+### What s Rest Api?
+
+ REST API, which stands for Representational State Transfer Application Programming Interface, is an architectural style for designing networked applications. 
+
+Key Concepts:  
+
+- Resources: In a RESTful API, resources are the key abstraction. They represent any information that can be named and addressed. Resources are typically identified by URIs (Uniform Resource Identifiers).
+
+- HTTP Verbs (CRUD operations): RESTful APIs use HTTP methods to perform actions on resources:
+
+1. GET: Retrieve a resource or a collection of resources.
+2. POST: Create a new resource.
+3. PUT or PATCH: Update an existing resource.
+4. DELETE: Remove a resource.
+
+- Representation: Resources are represented in different formats like JSON, XML, HTML, or others, and clients can request specific representations of resources.
+
+
+### Create Basic REST API using flask python language.
+
+#### A Minimal Application-
+
+I will create a basic RESTful API in Python using Flask framework and provide endpoints for creating users, getting all users
+
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+```
+
+Save it as hello.py or something similar. Make sure to not call your application flask.py because this would conflict with Flask itself.
+
+To run the application, use the flask command or python -m flask. You need to tell the Flask where your application is with the --app option.
+
+```
+flask --app hello run
+```
+ and 
+```
+Flask run
+```
+
+### How connect python flask Rest api with keycloak
+
+   Open Source Identity, Access Management, authentication to applications 
+and secure services with minimum effort.
+No need to deal with storing users or authenticating users.  
+Keycloak provides user federation, strong authentication, user management, 
+fine-grained authorization.
+
+
+## First Step :
+
+Install  keycloak....
+
+> Visit the Keycloak download page: [Keycloak Downloads](https://www.keycloak.org/downloads).   
+> Click to TAR.GZ(sha1) and Download keycloak.
+ 
+### After installation keycloak TAR.GZ(sha1) file unzip this file 
+Go, files > Download > right click (on keycloak TAR.GZ(sha1) file and) > click Exteact Here.
+
+Then Install keylock Pull the keycloak iamges using podman 
+
+```
+podman pull quay.io/keycloak/keycloak
+```
+
+## [Keycloak](https://www.keycloak.org/):
+   Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
+No need to deal with storing users or authenticating users.  
+Keycloak provides user federation, strong authentication, user management, fine-grained authorization.
+
+## Get started with Keycloak on Podman
+
+## [Podman](https://docs.podman.io/en/latest/):
+   Podman is a tool used to create, manage, and run containers. It allows users to package applications and their dependencies into isolated environments, making it easier to develop, deploy, and manage software.
+   
+
+## Podman install
+
+### Command-
+```
+sudo apt-get update
+```
+### Output-
+```
+deepak@deepak-Inspiron-3502:~$ sudo apt-get update
+[sudo] password for deepak: 
+Hit:1 http://packages.microsoft.com/repos/code stable InRelease
+Ign:2 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/4.4 InRelease      
+Ign:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease      
+Hit:4 https://download.docker.com/linux/ubuntu jammy InRelease                 
+Hit:5 https://dl.google.com/linux/chrome/deb stable InRelease                  
+Hit:6 https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/4.4 Release        
+Hit:7 http://in.archive.ubuntu.com/ubuntu jammy InRelease                      
+Hit:8 https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu jammy InRelease   
+Get:10 http://in.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]    
+Get:11 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]     
+Hit:12 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release       
+Hit:13 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/jammy pgadmin4 InRelease
+Hit:15 https://apt.postgresql.org/pub/repos/apt jammy-pgdg InRelease           
+Get:16 http://ppa.launchpad.net/tektoncd/cli/ubuntu eoan InRelease [15.9 kB]   
+Hit:17 http://in.archive.ubuntu.com/ubuntu jammy-backports InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3EFE0E0A2F2F60AA
+Reading package lists... Done
+W: https://repo.mongodb.org/apt/ubuntu/dists/jammy/mongodb-org/4.4/Release.gpg: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+W: https://repo.mongodb.org/apt/ubuntu/dists/focal/mongodb-org/5.0/Release.gpg: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://apt.postgresql.org/pub/repos/apt jammy-pgdg InRelease' doesn't support architecture 'i386'
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+```
+
+## Command -
+```
+sudo apt-get upgrade
+```
+## output-
+```
+deepak@deepak-Inspiron-3502:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  gir1.2-totem-1.0 gir1.2-totemplparser-1.0 libcdio-cdda2 libcdio-paranoia2
+  libcdio19 libnetplan0 libnfs13 librsync2
+Use 'sudo apt autoremove' to remove them.
+The following packages have been kept back:
+  python3-update-manager update-manager update-manager-core
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+```
+## Command -
+```  
+sudo apt install podman
+```
+## output-
+```
+deepak@deepak-Inspiron-3502:~$ sudo apt install podman
+[sudo] password for deepak: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+podman is already the newest version (3.4.4+ds1-1ubuntu1.22.04.2).
+The following packages were automatically installed and are no longer required:
+  gir1.2-totem-1.0 gir1.2-totemplparser-1.0 libcdio-cdda2 libcdio-paranoia2
+  libcdio19 libnetplan0 libnfs13 librsync2
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+```
+I'm already install podman ,so I got this output. If you don't have podman so it will be installed.
+
+## Command- 
+```
+podman -v
+```
+## Output- 
+```
+podman version 3.4.4
+```
+
+## Second Step : 
+
+Create a keycloak container using podman 
+
+### Command:
+
+```
+podman run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.3 start-dev
+```
+
+### Output-
+```
+deepak@deepak-Inspiron-3502:~$ podman run -p 8880:8880 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.3 start-dev
+Updating the configuration and installing your custom providers, if any. Please wait.
+2023-12-28 06:05:25,250 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 13127ms
+2023-12-28 06:05:27,615 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+2023-12-28 06:05:30,504 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+2023-12-28 06:05:31,359 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+2023-12-28 06:05:31,596 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+2023-12-28 06:05:31,766 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+2023-12-28 06:05:39,598 INFO  [org.keycloak.quarkus.runtime.storage.legacy.liquibase.QuarkusJpaUpdaterProvider] (main) Initializing database schema. Using changelog META-INF/jpa-changelog-master.xml
+
+UPDATE SUMMARY
+Run:                        117
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:          117
+
+2023-12-28 06:05:47,731 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_15327, Site name: null
+2023-12-28 06:05:47,913 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
+2023-12-28 06:05:47,993 INFO  [org.keycloak.services] (main) KC-SERVICES0050: Initializing master realm
+2023-12-28 06:05:51,625 INFO  [io.quarkus] (main) Keycloak 23.0.3 on JVM (powered by Quarkus 3.2.9.Final) started in 26.133s. Listening on: http://0.0.0.0:8080
+2023-12-28 06:05:51,626 INFO  [io.quarkus] (main) Profile dev activated. 
+2023-12-28 06:05:51,626 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy-reactive, resteasy-reactive-jackson, smallrye-context-propagation, smallrye-health, vertx]
+2023-12-28 06:05:52,267 INFO  [org.keycloak.services] (main) KC-SERVICES0009: Added user 'admin' to realm 'master'
+2023-12-28 06:05:52,275 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
+^C2023-12-28 06:06:21,618 INFO  [io.quarkus] (Shutdown thread) Keycloak stopped in 0.087s
+
+```
+
+After create podman container check podman container in your system 
+
+### Command:
+```
+podman ps -a 
+```
+
+### Output: 
+
+```
+CONTAINER ID  IMAGE                               COMMAND     CREATED      STATUS                     PORTS                                           NAMES
+cab3aded9c0f  quay.io/keycloak/keycloak:23.0.3    start-dev   5 days ago   Up 17 hours ago            0.0.0.0:8081->8080/tcp                          boring_euler
+
+```
+
+
+if your podman pod status not up so please start podman pod
+
+### command-
+
+#### Syntax-
+
+podman pod start <podman_names>
+
+```
+podman pod start 82148
+```
+or
+```
+podman pod start --latest
+```
+
+## Second Step -
+
+Create a app.py file in Vs code  
