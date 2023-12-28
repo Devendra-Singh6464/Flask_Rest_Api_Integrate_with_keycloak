@@ -26,6 +26,26 @@ Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the fo
 ```
 sudo apt install python3-pip
 ```
+### Command - 
+#### Syntax
+> python3 -m venv <Your_Venv_name>
+```
+python3 -m venv venv
+```
+#### Activate the Virtual Environment:
+#### Syntax
+> source <Your_Venv_name>/bin/activate
+
+#### Command-
+```
+Source venv/bin/activates
+```
+#### Output-
+```
+deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
+(venv) deepak@deepak-Inspiron-3502:~/keycloak1$
+```
+
 How to install flask in ubuntu 22.04
 ```
 pip install flask 
@@ -397,25 +417,6 @@ To secure the first application, you start by registering the application with y
 
 Creating a virtual environment (venv) for a Python Flask project is a good practice as it helps isolate dependencies for your project and keeps your project environment separate from the system-wide Python installation.
 
-### Command - 
-#### Syntax
-> python3 -m venv <Your_Venv_name>
-```
-python3 -m venv venv
-```
-#### Activate the Virtual Environment:
-#### Syntax
-> source <Your_Venv_name>/bin/activate
-
-#### Command-
-```
-Source venv/bin/activates
-```
-#### Output-
-```
-deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
-(venv) deepak@deepak-Inspiron-3502:~/keycloak1$
-```
 
 Create a app.py file in keycloak1 Folder then run this command 
 > app.py
