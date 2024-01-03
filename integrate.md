@@ -16,13 +16,6 @@ Codename:	jammy
 3. Flask (Python Framework)
 > Flask 2.3.3
 
-### Output-
-deepak@deepak-Inspiron-3502:~$ flask --version  
-Python 3.10.12  
-Flask 2.3.3  
-Werkzeug 3.0.1  
-
-
 ## First Step -
 
 1. Creating a New Folder keycloak1
