@@ -126,23 +126,15 @@ Flask run
 ```
 
 ### How connect python flask Rest api with keycloak
-
-   Open Source Identity, Access Management, authentication to applications 
-and secure services with minimum effort.
-No need to deal with storing users or authenticating users.  
-Keycloak provides user federation, strong authentication, user management, 
-fine-grained authorization.
-
-
 ## First Step :
+
+Keycloak:    Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
+No need to deal with storing users or authenticating users.  
+Keycloak provides user federation, strong authentication, user management, fine-grained authorization.
 
 Install  keycloak....
 
 ## [Keycloak](https://www.keycloak.org/):
-   Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
-No need to deal with storing users or authenticating users.  
-Keycloak provides user federation, strong authentication, user management, fine-grained authorization.
-
 
 > Visit the Keycloak download page: [Keycloak Downloads](https://www.keycloak.org/downloads).   
 > Click to TAR.GZ(sha1) and Download keycloak.
@@ -150,14 +142,11 @@ Keycloak provides user federation, strong authentication, user management, fine-
 ### After installation keycloak TAR.GZ(sha1) file unzip this file 
 Go, files > Download > right click (on keycloak TAR.GZ(sha1) file and) > click Exteact Here.
 
-
-
 ## Get started with Keycloak on Podman
 
 ## [Podman](https://docs.podman.io/en/latest/):
    Podman is a tool used to create, manage, and run containers. It allows users to package applications and their dependencies into isolated environments, making it easier to develop, deploy, and manage software.
    
-
 ## Podman install
 
 ### Command-
@@ -257,7 +246,7 @@ podman run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin
 
 ### Output-
 ```
-deepak@deepak-Inspiron-3502:~$ podman run -p 8880:8880 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.3 start-dev
+deepak@deepak-Inspiron-3502:~$ podman run -p 8081:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.3 start-dev
 Updating the configuration and installing your custom providers, if any. Please wait.
 2023-12-23 06:05:25,250 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 13127ms
 2023-12-23 06:05:27,615 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
@@ -284,6 +273,10 @@ Total change sets:          117
 2023-12-23 06:05:52,275 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
 ^C2023-12-23 06:06:21,618 INFO  [io.quarkus] (Shutdown thread) Keycloak stopped in 0.087s
 
+```
+Then - 
+```
+ctrl + c
 ```
 
 After create podman container check podman container in your system 
@@ -319,7 +312,7 @@ podman start --latest
 
 From a terminal, enter the following command to start Keycloak:-
 
-> This command starts Keycloak exposed on the local port 8080 and creates an initial admin user with the username admin and password admin.
+> This command starts Keycloak exposed on the local port 8081 and creates an initial admin user with the username admin and password admin.
 
 I execute this command then i am go browser and write `localhost:8081`(localhost:port)
 
@@ -541,3 +534,25 @@ After Creating app.py ,then Create a auth.json File in same folder
  4. Click `rest_api`
  5. Click `Credentials` 
 
+Then you go vs code terminal and again run over flask app-
+
+```
+flask run
+```
+And you click and open `127.0.0.1:5000`
+
+#### Output :
+(venv) deepak@deepak-Inspiron-3502:~/keycloak1$ flask run
+['requirements.txt', 'Screenshot from 2023-12-28 13-36-02.png', 'auth.json', 'app.py', '__pycache__', 'integrate.md', 'Screenshot from 2023-11-18 17-12-07.png', 'venv']
+DEBUG:urllib3.util.retry:Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+DEBUG:urllib3.util.retry:Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+ * Debug mode: off
+INFO:werkzeug:WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:Press CTRL+C to quit
+
+If the link is opened,a login page will open in front of you in which you will have to enter you email or password and then 1 token will come to your front then go to your Vs code terminal or your will see that your data will be visible on vs code terminal.
+
+
+
+ 
