@@ -40,6 +40,11 @@ python3 -m venv venv
 ```
 Source venv/bin/activate
 ```
+Or
+```
+. venv/bin/active
+```
+
 #### Output-
 ```
 deepak@deepak-Inspiron-3502:~/keycloak1$ source /home/deepak/keycloak1/venv/bin/activate
@@ -143,6 +148,7 @@ Install  keycloak....
 Go, files > Download > right click (on keycloak TAR.GZ(sha1) file and) > click Exteact Here.
 
 ## Get started with Keycloak on Podman
+After 
 
 ## [Podman](https://docs.podman.io/en/latest/):
    Podman is a tool used to create, manage, and run containers. It allows users to package applications and their dependencies into isolated environments, making it easier to develop, deploy, and manage software.
@@ -276,7 +282,7 @@ Total change sets:          117
 ```
 Then - 
 ```
-ctrl + c
+Open the next Terminal 
 ```
 
 After create podman container check podman container in your system 
@@ -338,7 +344,7 @@ A realm in Keycloak is equivalent to a tenant. Each realm allows an administrato
 >
 1. Open the Keycloak Admin Console.  
 2. Click the word master in the top-left corner, then click Create Realm.  
-3. Enter flask_app in the Realm name field.  
+3. Enter `flask_app` in the Realm name field.  
 4. Click Create.
 >
 
@@ -381,7 +387,7 @@ To secure the first application, you start by registering the application with y
    -  Name: `OpenID Connect`
    -  Client ID:   `rest_api`
    -  Root URL: `http://127.0.0.1:5000/`
-   -  Valid redirect URIs:`http://127.0.0.1:5000/*`
+   -  Valid redirect URIs:`http://127.0.0.1:5000/*` 
    -  Admin URL :`http://127.0.0.1:5000/` Forth Step -
 
 1. Creating a New Folder keycloak1
@@ -503,7 +509,7 @@ if __name__ == '__main__':
 ```
 
 After Creating app.py ,then Create a auth.json File in same folder
-> auth.py
+> auth.json
 ```
 {
     "web": {
