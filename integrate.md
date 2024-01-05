@@ -117,7 +117,7 @@ Source venv/bin/activate
 ```
 Or
 ```
-. venv/bin/active
+. venv/bin/activate
 ```
 
 #### Output-
