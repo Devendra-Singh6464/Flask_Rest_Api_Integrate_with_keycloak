@@ -16,6 +16,63 @@ Codename:	jammy
 3. Flask (Python Framework)
 > Flask 2.3.3
 
+### What is APIs? 
+
+ API stands for Application Programming Interface. Imagine you're in a restaurant. You, as a customer, don't go into the kitchen and cook your food; instead, you interact with the waiter/waitress. You tell the waiter what you want to order, and the waiter takes that order to the kitchen, communicates with the chef, and brings back your food.
+
+ Similarly, an API is like a waiter/waitress in a restaurant. It's a set of rules and protocols that allows different software applications to communicate and interact with each other. It defines how different software components should interact. It's like an intermediary that takes requests from one software (like your application) and communicates those requests to another software (like a server or database). Then it brings back the response to the requester.
+
+ In the digital world, APIs allow different software systems, services, or platforms to talk to each other, exchange data, request services, or perform specific actions. They define the functionalities that developers can use in their applications without needing to know how those functionalities are implemented.
+
+
+### What s Rest Api?
+
+ REST API, which stands for Representational State Transfer Application Programming Interface, is an architectural style for designing networked applications. 
+
+Key Concepts:  
+
+- Resources: In a RESTful API, resources are the key abstraction. They represent any information that can be named and addressed. Resources are typically identified by URIs (Uniform Resource Identifiers).
+
+- HTTP Verbs (CRUD operations): RESTful APIs use HTTP methods to perform actions on resources:
+
+1. GET: Retrieve a resource or a collection of resources.
+2. POST: Create a new resource.
+3. PUT or PATCH: Update an existing resource.
+4. DELETE: Remove a resource.
+
+- Representation: Resources are represented in different formats like JSON, XML, HTML, or others, and clients can request specific representations of resources.
+
+
+### Create Basic REST API using flask python language.
+
+#### A Minimal Application-
+
+I will create a basic RESTful API in Python using Flask framework and provide endpoints for creating users, getting all users
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+```
+
+Save it as hello.py or something similar. Make sure to not call your application flask.py because this would conflict with Flask itself.
+
+To run the application, use the flask command or python -m flask. You need to tell the Flask where your application is with the --app option.
+
+```
+flask --app hello run
+```
+ and 
+```
+Flask run
+```
+
+After creataing basic Rest Api we integrate keycloak with Rest api come to the linux terminal and create directory ,`keycloak1`.
+
 ## First Step -
 
 1. Creating a New Folder keycloak1
@@ -73,65 +130,8 @@ pip install keycloak
 pip install Flask-OIDC
 ```
 
-
-### What is APIs? 
-
- API stands for Application Programming Interface. Imagine you're in a restaurant. You, as a customer, don't go into the kitchen and cook your food; instead, you interact with the waiter/waitress. You tell the waiter what you want to order, and the waiter takes that order to the kitchen, communicates with the chef, and brings back your food.
-
- Similarly, an API is like a waiter/waitress in a restaurant. It's a set of rules and protocols that allows different software applications to communicate and interact with each other. It defines how different software components should interact. It's like an intermediary that takes requests from one software (like your application) and communicates those requests to another software (like a server or database). Then it brings back the response to the requester.
-
- In the digital world, APIs allow different software systems, services, or platforms to talk to each other, exchange data, request services, or perform specific actions. They define the functionalities that developers can use in their applications without needing to know how those functionalities are implemented.
-
-
-### What s Rest Api?
-
- REST API, which stands for Representational State Transfer Application Programming Interface, is an architectural style for designing networked applications. 
-
-Key Concepts:  
-
-- Resources: In a RESTful API, resources are the key abstraction. They represent any information that can be named and addressed. Resources are typically identified by URIs (Uniform Resource Identifiers).
-
-- HTTP Verbs (CRUD operations): RESTful APIs use HTTP methods to perform actions on resources:
-
-1. GET: Retrieve a resource or a collection of resources.
-2. POST: Create a new resource.
-3. PUT or PATCH: Update an existing resource.
-4. DELETE: Remove a resource.
-
-- Representation: Resources are represented in different formats like JSON, XML, HTML, or others, and clients can request specific representations of resources.
-
-
-### Create Basic REST API using flask python language.
-
-#### A Minimal Application-
-
-I will create a basic RESTful API in Python using Flask framework and provide endpoints for creating users, getting all users
-
-
-```
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
-```
-
-Save it as hello.py or something similar. Make sure to not call your application flask.py because this would conflict with Flask itself.
-
-To run the application, use the flask command or python -m flask. You need to tell the Flask where your application is with the --app option.
-
-```
-flask --app hello run
-```
- and 
-```
-Flask run
-```
-
 ### How connect python flask Rest api with keycloak
-## First Step :
+## Second Step :
 
 Keycloak:    Open Source Identity, Access Management, authentication to applications and secure services with minimum effort.
 No need to deal with storing users or authenticating users.  
@@ -147,9 +147,8 @@ Install  keycloak....
 ### After installation keycloak TAR.GZ(sha1) file unzip this file 
 Go, files > Download > right click (on keycloak TAR.GZ(sha1) file and) > click Exteact Here.
 
-## Get started with Keycloak on Podman
-After 
-
+## Get started with Keycloak Server on Podman  
+Open the linux terminal -
 ## [Podman](https://docs.podman.io/en/latest/):
    Podman is a tool used to create, manage, and run containers. It allows users to package applications and their dependencies into isolated environments, making it easier to develop, deploy, and manage software.
    
@@ -325,6 +324,9 @@ I execute this command then i am go browser and write `localhost:8081`(localhost
 
 ## Third Step-
 
+## ![image](https://github.com/Devendra-Singh6464/Flask_Rest_Api_Integrate_with_keycloak/assets/136952464/7b4abef4-f03c-4918-8745-57c3d12b5727)
+
+Click Administration console  
 ## [Welcome to Keycloak page]![image](https://github.com/Devendra-Singh6464/Flask_Rest_Api_Integrate_with_keycloak/assets/136952464/2aa702a9-80f3-406b-931b-4dbd35dd5749)
 :
 
