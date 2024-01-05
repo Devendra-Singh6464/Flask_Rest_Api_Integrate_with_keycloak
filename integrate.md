@@ -16,6 +16,9 @@ Codename:	jammy
 3. Flask (Python Framework)
 > Flask 2.3.3
 
+
+
+
 ### What is APIs? 
 
  API stands for Application Programming Interface. Imagine you're in a restaurant. You, as a customer, don't go into the kitchen and cook your food; instead, you interact with the waiter/waitress. You tell the waiter what you want to order, and the waiter takes that order to the kitchen, communicates with the chef, and brings back your food.
@@ -44,6 +47,21 @@ Key Concepts:
 
 
 ### Create Basic REST API using flask python language.
+
+Ubuntu 22.04 comes with Python pre-installed. To install pip, you can use the following command:
+```
+sudo apt install python3-pip
+```
+
+How to install flask in ubuntu 22.04
+```
+pip install flask 
+```
+How to check flask --version
+### Command -
+```
+flask --version
+```
 
 #### A Minimal Application-
 
